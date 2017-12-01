@@ -1,0 +1,23 @@
+#Thu Nov 30 23:25:28 EST 2017
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiHttpClientBuilderFactory.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/test/java/org/apache/http/osgi/impl/WeakListTest.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/HttpClientBuilderConfigurator.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiCachingHttpClientBuilderFactory.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/package-info.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/test/java/org/apache/http/osgi/impl/TestPropertiesUtils.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiClientBuilderFactory.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiCredentialsProvider.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/PropertiesUtils.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/test/java/org/apache/http/osgi/impl/OSGiProxyConfigurationTest.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiHttpRoutePlanner.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/WeakList.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/test/java/org/apache/http/osgi/impl/TestOSGiHttpRoutePlanner.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/package-info.java=1512102246000
+configuration*?=63012A882A1BB8F3303C8BE2E10D7604C2A62AF5
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/test/java/org/apache/http/osgi/impl/OSGiCredentialsProviderTest.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/HttpClientBuilderFactory.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/CachingHttpClientBuilderFactory.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiProxyConfiguration.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/HttpProxyConfigurationActivator.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/ProxyConfiguration.java=1512102246000
+/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/package-info.java=1512102246000

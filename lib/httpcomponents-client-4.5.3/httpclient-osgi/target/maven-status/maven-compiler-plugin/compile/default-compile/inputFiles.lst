@@ -1,0 +1,16 @@
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/package-info.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/PropertiesUtils.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiProxyConfiguration.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/HttpProxyConfigurationActivator.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiCachingHttpClientBuilderFactory.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiClientBuilderFactory.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/ProxyConfiguration.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/HttpClientBuilderFactory.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiCredentialsProvider.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/package-info.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/CachingHttpClientBuilderFactory.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiHttpClientBuilderFactory.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/package-info.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/WeakList.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiHttpRoutePlanner.java
+/Users/christopherhelms/Downloads/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/HttpClientBuilderConfigurator.java

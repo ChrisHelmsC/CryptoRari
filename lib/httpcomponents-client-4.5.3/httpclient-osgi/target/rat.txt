@@ -1,0 +1,61 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2017-11-30T23:25:30-05:00
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 24
+
+Apache Licensed: 24
+Generated Documents: 0
+
+JavaDocs are generated and so license header is optional
+Generated files do not required license headers
+
+0 Unknown Licenses
+
+*******************************
+
+Unapproved licenses:
+
+
+*******************************
+
+Archives:
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require AL headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc will be marked N
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/pom.xml
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/HttpClientBuilderConfigurator.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/HttpProxyConfigurationActivator.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiCachingHttpClientBuilderFactory.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiClientBuilderFactory.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiCredentialsProvider.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiHttpClientBuilderFactory.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiHttpRoutePlanner.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/OSGiProxyConfiguration.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/package-info.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/PropertiesUtils.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/impl/WeakList.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/package-info.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/CachingHttpClientBuilderFactory.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/HttpClientBuilderFactory.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/package-info.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/java/org/apache/http/osgi/services/ProxyConfiguration.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/resources/OSGI-INF/metatype/metatype.properties
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/main/resources/OSGI-INF/metatype/metatype.xml
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/test/java/org/apache/http/osgi/impl/OSGiCredentialsProviderTest.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/test/java/org/apache/http/osgi/impl/OSGiProxyConfigurationTest.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/test/java/org/apache/http/osgi/impl/TestOSGiHttpRoutePlanner.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/test/java/org/apache/http/osgi/impl/TestPropertiesUtils.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/httpclient-osgi/src/test/java/org/apache/http/osgi/impl/WeakListTest.java
+ 
+*****************************************************
+ Printing headers for files without AL header...
+ 
+ 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.5">
+<file name="/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/test/java/org/apache/http/benchmark/HttpServer.java">
+</file>
+<file name="/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/test/java/org/apache/http/benchmark/SmokeTest.java">
+</file>
+</checkstyle>

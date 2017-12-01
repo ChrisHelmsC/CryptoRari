@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.5">
+<file name="/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/fluent-hc/src/examples/org/apache/http/client/fluent/FluentAsync.java">
+</file>
+<file name="/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/fluent-hc/src/examples/org/apache/http/client/fluent/FluentExecutor.java">
+</file>
+<file name="/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/fluent-hc/src/examples/org/apache/http/client/fluent/FluentQuickStart.java">
+</file>
+<file name="/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/fluent-hc/src/examples/org/apache/http/client/fluent/FluentRequests.java">
+</file>
+<file name="/Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-client-4.5.3/fluent-hc/src/examples/org/apache/http/client/fluent/FluentResponseHandling.java">
+</file>
+</checkstyle>

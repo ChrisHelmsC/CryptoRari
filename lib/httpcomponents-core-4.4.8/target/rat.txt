@@ -1,0 +1,39 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2017-12-01T00:07:21-05:00
+
+Notes: 5
+Binaries: 0
+Archives: 0
+Standards: 8
+
+Apache Licensed: 8
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  N     BUILDING.txt
+  AL    doap_HttpComponents_Core.rdf
+  N     LICENSE.txt
+  N     NOTICE.txt
+  AL    pom.xml
+  N     README.txt
+  N     RELEASE_NOTES.txt
+  AL    src/docbkx/advanced.xml
+  AL    src/docbkx/blocking-io.xml
+  AL    src/docbkx/fundamentals.xml
+  AL    src/docbkx/index.xml
+  AL    src/docbkx/nio.xml
+  AL    src/docbkx/preface.xml
+ 
+*****************************************************

@@ -1,0 +1,41 @@
+
+*****************************************************
+Summary
+-------
+Generated at: 2017-12-01T00:08:01-05:00
+
+Notes: 0
+Binaries: 0
+Archives: 0
+Standards: 15
+
+Apache Licensed: 15
+Generated Documents: 0
+
+JavaDocs are generated, thus a license header is optional.
+Generated files do not require license headers.
+
+0 Unknown Licenses
+
+*****************************************************
+  Files with Apache License headers will be marked AL
+  Binary files (which do not require any license headers) will be marked B
+  Compressed archives will be marked A
+  Notices, licenses etc. will be marked N
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/pom.xml
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/BenchmarkConnection.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/BenchmarkWorker.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/CommandLineUtils.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/Config.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/CountingInputStream.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/CountingOutputStream.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/DefaultHeader.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/HttpBenchmark.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/package-info.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/ResultProcessor.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/Results.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/main/java/org/apache/http/benchmark/Stats.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/test/java/org/apache/http/benchmark/HttpServer.java
+  AL    /Users/christopherhelms/Code/CryptoRari/lib/httpcomponents-core-4.4.8/httpcore-ab/src/test/java/org/apache/http/benchmark/SmokeTest.java
+ 
+*****************************************************

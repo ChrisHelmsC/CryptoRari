@@ -1,0 +1,106 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1512104873734
+Build-Jdk: 1.8.0_121
+Built-By: christopherhelms
+Bundle-Description: Apache HttpComponents Core (OSGi bundle)
+Bundle-DocURL: http://www.apache.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: Apache Apache HttpCore OSGi bundle
+Bundle-SymbolicName: org.apache.httpcomponents.httpcore
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Version: 4.4.8
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: *;scope=compile|runtime;inline=true
+Export-Package: org.apache.http;version="4.4.8";uses:="org.apache.http.p
+ arams,org.apache.http.protocol,org.apache.http.util",org.apache.http.an
+ notation;version="4.4.8",org.apache.http.concurrent;version="4.4.8",org
+ .apache.http.config;version="4.4.8",org.apache.http.entity;version="4.4
+ .8";uses:="org.apache.http",org.apache.http.impl;version="4.4.8";uses:=
+ "org.apache.http,org.apache.http.config,org.apache.http.entity,org.apac
+ he.http.impl.entity,org.apache.http.io,org.apache.http.params,org.apach
+ e.http.protocol",org.apache.http.impl.bootstrap;version="4.4.8";uses:="
+ javax.net,javax.net.ssl,org.apache.http,org.apache.http.config,org.apac
+ he.http.impl,org.apache.http.protocol",org.apache.http.impl.entity;vers
+ ion="4.4.8";uses:="org.apache.http,org.apache.http.entity,org.apache.ht
+ tp.io",org.apache.http.impl.io;version="4.4.8";uses:="org.apache.http,o
+ rg.apache.http.config,org.apache.http.io,org.apache.http.message,org.ap
+ ache.http.params,org.apache.http.util",org.apache.http.impl.nio;version
+ ="4.4.8";uses:="javax.net.ssl,org.apache.http,org.apache.http.config,or
+ g.apache.http.entity,org.apache.http.impl,org.apache.http.impl.io,org.a
+ pache.http.impl.nio.reactor,org.apache.http.io,org.apache.http.nio,org.
+ apache.http.nio.reactor,org.apache.http.nio.reactor.ssl,org.apache.http
+ .nio.util,org.apache.http.params,org.apache.http.protocol",org.apache.h
+ ttp.impl.nio.bootstrap;version="4.4.8";uses:="javax.net.ssl,org.apache.
+ http,org.apache.http.config,org.apache.http.impl.nio,org.apache.http.im
+ pl.nio.reactor,org.apache.http.nio,org.apache.http.nio.protocol,org.apa
+ che.http.nio.reactor,org.apache.http.nio.reactor.ssl,org.apache.http.pr
+ otocol",org.apache.http.impl.nio.codecs;version="4.4.8";uses:="org.apac
+ he.http,org.apache.http.config,org.apache.http.impl.io,org.apache.http.
+ message,org.apache.http.nio,org.apache.http.nio.reactor,org.apache.http
+ .params,org.apache.http.util",org.apache.http.impl.nio.pool;version="4.
+ 4.8";uses:="javax.net.ssl,org.apache.http,org.apache.http.concurrent,or
+ g.apache.http.config,org.apache.http.nio,org.apache.http.nio.pool,org.a
+ pache.http.nio.reactor,org.apache.http.nio.reactor.ssl,org.apache.http.
+ nio.util,org.apache.http.params,org.apache.http.pool",org.apache.http.i
+ mpl.nio.reactor;version="4.4.8";uses:="javax.net.ssl,org.apache.http.co
+ nfig,org.apache.http.nio.reactor,org.apache.http.nio.reactor.ssl,org.ap
+ ache.http.nio.util,org.apache.http.params,org.apache.http.util",org.apa
+ che.http.impl.nio.ssl;version="4.4.8";uses:="javax.net.ssl,org.apache.h
+ ttp.impl.nio,org.apache.http.impl.nio.reactor,org.apache.http.nio,org.a
+ pache.http.nio.reactor,org.apache.http.params",org.apache.http.impl.poo
+ l;version="4.4.8";uses:="javax.net,javax.net.ssl,org.apache.http,org.ap
+ ache.http.config,org.apache.http.params,org.apache.http.pool",org.apach
+ e.http.io;version="4.4.8";uses:="org.apache.http,org.apache.http.config
+ ,org.apache.http.util",org.apache.http.message;version="4.4.8";uses:="o
+ rg.apache.http,org.apache.http.params,org.apache.http.util",org.apache.
+ http.nio;version="4.4.8";uses:="org.apache.http,org.apache.http.config,
+ org.apache.http.nio.reactor,org.apache.http.protocol",org.apache.http.n
+ io.entity;version="4.4.8";uses:="org.apache.http,org.apache.http.entity
+ ,org.apache.http.nio,org.apache.http.nio.util",org.apache.http.nio.para
+ ms;version="4.4.8";uses:="org.apache.http.params",org.apache.http.nio.p
+ ool;version="4.4.8";uses:="org.apache.http.concurrent,org.apache.http.n
+ io.reactor,org.apache.http.pool",org.apache.http.nio.protocol;version="
+ 4.4.8";uses:="org.apache.http,org.apache.http.concurrent,org.apache.htt
+ p.entity,org.apache.http.nio,org.apache.http.nio.entity,org.apache.http
+ .nio.util,org.apache.http.params,org.apache.http.pool,org.apache.http.p
+ rotocol",org.apache.http.nio.reactor;version="4.4.8";uses:="org.apache.
+ http.util",org.apache.http.nio.reactor.ssl;version="4.4.8";uses:="javax
+ .net.ssl,org.apache.http,org.apache.http.nio.reactor",org.apache.http.n
+ io.util;version="4.4.8";uses:="org.apache.http.io,org.apache.http.nio",
+ org.apache.http.params;version="4.4.8";uses:="org.apache.http,org.apach
+ e.http.config",org.apache.http.pool;version="4.4.8";uses:="org.apache.h
+ ttp.concurrent",org.apache.http.protocol;version="4.4.8";uses:="org.apa
+ che.http,org.apache.http.params",org.apache.http.ssl;version="4.4.8";us
+ es:="javax.net.ssl",org.apache.http.util;version="4.4.8";uses:="org.apa
+ che.http"
+Implementation-Build: ${scmBranch}@r${buildNumber}; 2017-12-01 05:07:12+
+ 0000
+Implementation-Title: HttpComponents Apache HttpCore OSGi bundle
+Implementation-URL: http://hc.apache.org/httpcomponents-core-ga
+Implementation-Vendor: The Apache Software Foundation
+Implementation-Vendor-Id: org.apache
+Implementation-Version: 4.4.8
+Import-Package: javax.net,javax.net.ssl,org.apache.http;version="[4.4,5)
+ ",org.apache.http.concurrent;version="[4.4,5)",org.apache.http.config;v
+ ersion="[4.4,5)",org.apache.http.entity;version="[4.4,5)",org.apache.ht
+ tp.impl;version="[4.4,5)",org.apache.http.impl.entity;version="[4.4,5)"
+ ,org.apache.http.impl.io;version="[4.4,5)",org.apache.http.impl.nio;ver
+ sion="[4.4,5)",org.apache.http.impl.nio.codecs;version="[4.4,5)",org.ap
+ ache.http.impl.nio.reactor;version="[4.4,5)",org.apache.http.io;version
+ ="[4.4,5)",org.apache.http.message;version="[4.4,5)",org.apache.http.ni
+ o;version="[4.4,5)",org.apache.http.nio.entity;version="[4.4,5)",org.ap
+ ache.http.nio.pool;version="[4.4,5)",org.apache.http.nio.protocol;versi
+ on="[4.4,5)",org.apache.http.nio.reactor;version="[4.4,5)",org.apache.h
+ ttp.nio.reactor.ssl;version="[4.4,5)",org.apache.http.nio.util;version=
+ "[4.4,5)",org.apache.http.params;version="[4.4,5)",org.apache.http.pool
+ ;version="[4.4,5)",org.apache.http.protocol;version="[4.4,5)",org.apach
+ e.http.ssl;version="[4.4,5)",org.apache.http.util;version="[4.4,5)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Specification-Title: HttpComponents Apache HttpCore OSGi bundle
+Specification-Vendor: The Apache Software Foundation
+Specification-Version: 4.4.8
+Tool: Bnd-3.3.0.201609221906
+url: http://hc.apache.org/httpcomponents-core-ga
+X-Compile-Source-JDK: 1.6
+X-Compile-Target-JDK: 1.6

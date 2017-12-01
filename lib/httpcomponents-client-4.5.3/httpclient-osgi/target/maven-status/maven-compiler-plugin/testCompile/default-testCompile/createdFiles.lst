@@ -1,0 +1,5 @@
+org/apache/http/osgi/impl/OSGiCredentialsProviderTest.class
+org/apache/http/osgi/impl/OSGiProxyConfigurationTest.class
+org/apache/http/osgi/impl/TestPropertiesUtils.class
+org/apache/http/osgi/impl/WeakListTest.class
+org/apache/http/osgi/impl/TestOSGiHttpRoutePlanner.class
