@@ -9,6 +9,8 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.springframework.web.client.RestTemplate;
+
 import com.coinbase.exchange.api.accounts.*;
 import com.coinbase.exchange.api.products.ProductService;
 
@@ -33,6 +35,7 @@ public class InformationHandlerDemo {
 	
 
 	public static void main(String [] args) {
+		
 		//Proof GDAX JAR is working
 		Account myAccount = new Account();
 		myAccount.getBalance();
