@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.net.URI;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
@@ -8,9 +9,7 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-
 import com.coinbase.exchange.api.accounts.*;
-import com.sun.org.apache.xerces.internal.util.URI;
 
 //Receives 200 OK response from google
 
@@ -21,10 +20,25 @@ public class InformationHandler {
 		Account myAccount = new Account();
 		myAccount.getBalance();
 		
+		//Get time from the GDAX server
+		String timeStamp = "";
+		try {
+			URI timeUri = new URIBuilder()
+					.setScheme(Constants.HTTP.SCHEME) 
+					.setHost(Constants.GDAX.HOST)
+					.setPath(Constants.GDAX.Paths.TIME)
+					.build();
+			CloseableHttpClient timeClient = HttpClients.createDefault();
+			HttpGet httpTimeGet = new HttpGet();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		try {
 			//Create GDAX URI
-			java.net.URI uri = new URIBuilder()
+			URI uri = new URIBuilder()
 					.setScheme(Constants.HTTP.SCHEME)
 					.setHost(Constants.GDAX.HOST)
 					.setPath(Constants.GDAX.Paths.CURRENCIES)
@@ -34,7 +48,10 @@ public class InformationHandler {
 			HttpGet httpGet = new HttpGet(uri);
 			
 			//Set headers
-			httpGet.setHeader(arg0, arg1);
+			
+			httpGet.setHeader(Constants.GDAX.Headers.CB_ACCESS_KEY, Environment.API_KEY);
+			httpGet.setHeader(Constants.GDAX.Headers.CB_ACCESS_TIMESTAMP, );
+			httpGet.setHeader(Constants.GDAX.Headers.CS_ACCESS_PASSPHRASE, Environment.PASSPHRASE);
 			
 			CloseableHttpResponse response1;
 			

@@ -11,6 +11,7 @@ public class Constants {
 		
 		public class Paths {
 			public static final String CURRENCIES = "/currencies";
+			public static final String TIME = "/time";
 		}
 		
 		public class Currencies {
