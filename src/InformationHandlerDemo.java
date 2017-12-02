@@ -20,6 +20,17 @@ import com.coinbase.exchange.api.products.ProductService;
  */
 
 public class InformationHandlerDemo {
+	
+	URIBuilder tempURI;
+	
+	public InformationHandlerDemo() {
+		tempURI = new URIBuilder();
+	}
+	
+	public void getProductOrderBook() {
+		
+	}
+	
 
 	public static void main(String [] args) {
 		//Proof GDAX JAR is working
