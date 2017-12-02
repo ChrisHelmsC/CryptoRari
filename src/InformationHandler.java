@@ -30,7 +30,7 @@ public class InformationHandler {
 			URI timeUri = new URIBuilder()
 					.setScheme(Constants.HTTP.SCHEME) 
 					.setHost(Constants.GDAX.HOST)
-					.setPath(Constants.GDAX.Paths.TIME)
+					.setPath(Constants.GDAX.MarketPaths.TIME)
 					.build();
 			CloseableHttpClient timeClient = HttpClients.createDefault();
 			HttpGet httpTimeGet = new HttpGet();
@@ -45,7 +45,7 @@ public class InformationHandler {
 			URI uri = new URIBuilder()
 					.setScheme(Constants.HTTP.SCHEME)
 					.setHost(Constants.GDAX.HOST)
-					.setPath(Constants.GDAX.Paths.CURRENCIES)
+					.setPath(Constants.GDAX.MarketPaths.CURRENCIES)
 					.build();
 			
 			//Create request
