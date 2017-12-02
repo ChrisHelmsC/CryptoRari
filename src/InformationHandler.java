@@ -14,6 +14,10 @@ import com.coinbase.exchange.api.accounts.*;
 //Receives 200 OK response from google
 
 public class InformationHandler {
+	
+	public InformationHandler() {
+		
+	}
 
 	public static void main() {
 		//Proof GDAX JAR is working
