@@ -10,6 +10,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import com.coinbase.exchange.api.accounts.*;
+import com.coinbase.exchange.api.products.ProductService;
 
 /*According to the GDAX API, the account based headers are not needed
  * for just getting public market data on currencies. 
@@ -18,7 +19,7 @@ import com.coinbase.exchange.api.accounts.*;
  * from the server.
  */
 
-public class InformationHandler {
+public class InformationHandlerDemo {
 
 	public static void main(String [] args) {
 		//Proof GDAX JAR is working
@@ -26,21 +27,22 @@ public class InformationHandler {
 		myAccount.getBalance();
 		
 		
-			/*Create URI to get price of BTC. Since this is public market data,
-			 * the GDAX account headers are not required.
-			 * 
-			 * The URI is https://api.gdax.com/products/BTC-USD/ticker
-			 */
+		/*Create URI to get price of BTC (Called a product). 
+		 * Since this is public market data, the GDAX account
+		 *  headers are not required.
+		 * 
+		 * The URI is https://api.gdax.com/products/BTC-USD/ticker
+		 */
 			
-			try {
-				URI btcPriceUri = new URIBuilder()
-						.setScheme(Constants.HTTP.SCHEME)
-						.setHost(Constants.GDAX.HOST)
-						.setPath(Constants.GDAX.MarketPaths.PRODUCTS 
-								+ Constants.GDAX.PRODUCT_IDS.BTC_PRODUCT_ID
-								+ Constants.GDAX.MarketPaths.TICKER)
-						.build();
-				System.out.println("The URI being used is: " + btcPriceUri.toString());
+		try {
+			URI btcPriceUri = new URIBuilder()
+					.setScheme(Constants.HTTP.SCHEME)
+					.setHost(Constants.GDAX.HOST)
+					.setPath(Constants.GDAX.MarketPaths.PRODUCTS 
+							+ Constants.GDAX.PRODUCT_IDS.BTC_PRODUCT_ID
+							+ Constants.GDAX.MarketPaths.TICKER)
+					.build();
+			System.out.println("The URI being used is: " + btcPriceUri.toString());
 			
 			//Create request using the URI
 			HttpGet httpGet = new HttpGet(btcPriceUri);
@@ -55,6 +57,13 @@ public class InformationHandler {
 			
 			//Print out status line containing pay load
 			System.out.println("The server response is: \n" + body);
+			
+			//Create an object from the response body using Spring Jackson
+			ObjectMapperDemo objectMapper = new ObjectMapperDemo();
+			Product product = objectMapper.readJsonWithObjectMapper(body);
+			
+			//Show product was successful
+			System.out.print("Product object parsed from JSON: \n" + product.toString());
 			
 			//Release resources
 			EntityUtils.consume(entity);
@@ -71,4 +80,5 @@ public class InformationHandler {
 			e.printStackTrace();
 		}
 	}
+
 }

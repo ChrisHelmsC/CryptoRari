@@ -19,6 +19,8 @@ public abstract class Constants {
 		
 		public static class PRODUCT_IDS {
 			public static final String BTC_PRODUCT_ID = "/BTC-USD";
+			public static final String ETH_PRODUCT_ID = "/ETH-USD";
+			public static final String LTC_PRODUCT_ID = "/LTC-USD";
 		}
 		
 		public static class Currencies {
