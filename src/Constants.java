@@ -2,7 +2,7 @@
 public abstract class Constants {
 	//Http Constants
 	public static class HTTP {
-		public static final String SCHEME = "https";
+		public static final String SCHEME = "https://";
 	}
 	
 	//GDAX Constants
@@ -15,9 +15,10 @@ public abstract class Constants {
 			public static final String TIME = "/time";
 			public static final String PRODUCTS = "/products";
 			public static final String TICKER = "/ticker";
+			public static final String Book = "/book";
 		}
 		
-		public static class PRODUCT_IDS {
+		public static class ProductIds {
 			public static final String BTC_PRODUCT_ID = "/BTC-USD";
 			public static final String ETH_PRODUCT_ID = "/ETH-USD";
 			public static final String LTC_PRODUCT_ID = "/LTC-USD";
