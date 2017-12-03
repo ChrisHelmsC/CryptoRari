@@ -2,8 +2,8 @@ package com.cryptoRari.utilities;
 
 public abstract class Constants {
 	
-	public final String sandboxURL = "https://api-public.sandbox.gdax.com";
-	public final String liveURL = "https://api.gdax.com";
+	public static final String URL = "https://api-public.sandbox.gdax.com";
+	//public final String URL = "https://api.gdax.com";
 	
 	
 	//Http Constants
