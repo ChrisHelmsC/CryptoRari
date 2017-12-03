@@ -27,8 +27,7 @@ public class ProductsService {
 	 * @return list of all currencies and what they can be exchanged with (Product objects)
 	 */
 	public ArrayList<Product> getProducts() {
-		final String URI = Constants.HTTP.SCHEME +
-				Constants.GDAX.HOST +
+		final String URI = Constants.URL +
 				Constants.GDAX.MarketPaths.PRODUCTS;
 		
 		Product[] newProducts = restTemplate.getForObject(URI, Product[].class);
@@ -43,8 +42,7 @@ public class ProductsService {
 	 * @productId - currency code for desired ticker
 	 ************************************************/
 	public OrderBook getOrderBook(String productId) {
-		final String URI = Constants.HTTP.SCHEME +
-				Constants.GDAX.HOST +
+		final String URI = Constants.URL +
 				Constants.GDAX.MarketPaths.PRODUCTS  +
 				productId +
 				Constants.GDAX.MarketPaths.BOOK;
@@ -63,8 +61,7 @@ public class ProductsService {
 	 ************************************************/
 	public Ticker getTicker(String productId) {
 
-		final String URI = Constants.HTTP.SCHEME +
-					Constants.GDAX.HOST +
+		final String URI = Constants.URL +
 					Constants.GDAX.MarketPaths.PRODUCTS  +
 					productId +
 					Constants.GDAX.MarketPaths.TICKER;
@@ -83,8 +80,7 @@ public class ProductsService {
 	 ************************************************/
 	public ArrayList<Trade> getTrades(String productId) {
 		
-		final String URI = Constants.HTTP.SCHEME +
-				Constants.GDAX.HOST +
+		final String URI = Constants.URL +
 				Constants.GDAX.MarketPaths.PRODUCTS  +
 				productId +
 				Constants.GDAX.MarketPaths.TRADES;
@@ -108,8 +104,7 @@ public class ProductsService {
 	 * @productId - currency code for desired ticker
 	 ************************************************/
 	public Stats getStats(String productId) {
-		final String URI = Constants.HTTP.SCHEME +
-				Constants.GDAX.HOST +
+		final String URI = Constants.URL +
 				Constants.GDAX.MarketPaths.PRODUCTS  +
 				productId +
 				Constants.GDAX.MarketPaths.STATS;
