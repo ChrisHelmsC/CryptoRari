@@ -87,6 +87,7 @@ public class InformationHandler {
 		
 		RestTemplate template = new RestTemplate();
 		Trade[] tradeList = template.getForObject(URI, Trade[].class);
+		
 		return new ArrayList<>(Arrays.asList(tradeList));
 	}
 	
@@ -105,7 +106,6 @@ public class InformationHandler {
 		
 		RestTemplate template = new RestTemplate();
 		Stats stats = template.getForObject(URI, Stats.class);
-		stats.setProductId(productId);
 		
 		return stats;
 	}

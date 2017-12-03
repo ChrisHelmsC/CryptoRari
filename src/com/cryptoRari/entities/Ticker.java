@@ -1,5 +1,7 @@
 package com.cryptoRari.entities;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Ticker {
 	private String trade_id;
 	private double price;

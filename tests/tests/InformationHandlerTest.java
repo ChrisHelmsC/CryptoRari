@@ -59,7 +59,6 @@ public class InformationHandlerTest {
 		ArrayList<Trade> btcTrades = IH.getTrades(bitcoinId);
 		
 		assertTrue(btcTrades != null);
-		
 		assertTrue(btcTrades.size() > 0);
 	}
 	

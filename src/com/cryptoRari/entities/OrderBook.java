@@ -2,6 +2,9 @@ package com.cryptoRari.entities;
 
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class OrderBook {
 	public static final String BID_ORDER = "BID";
 	public static final String ASK_ORDER = "ASK";

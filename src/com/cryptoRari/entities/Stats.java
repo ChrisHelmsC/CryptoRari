@@ -3,7 +3,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Stats {
-	private String productId;
 	private double high;
 	private double last;
 	private double low;
@@ -41,16 +40,9 @@ public class Stats {
 		this.volume_30day = volume_30day;
 	}
 	
-	public String getProductId() {
-		return productId;
-	}
-	public void setProductId(String productId) {
-		this.productId = productId;
-	}
 	@Override
 	public String toString() {
-		return "Currency: " + productId +
-				"\nHigh: " + Double.toString(high) +
+		return	"High: " + Double.toString(high) +
 				"\nLast: " + Double.toString(last) +
 				"\nLow: " + Double.toString(low) +
 				"\nVolume: " + Double.toString(volume) +
