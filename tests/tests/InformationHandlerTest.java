@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
+
+import com.cryptoRari.entities.OrderBook;
+import com.cryptoRari.entities.Stats;
 import com.cryptoRari.entities.Ticker;
 import com.cryptoRari.entities.Trade;
 import com.cryptoRari.services.InformationHandler;
@@ -59,5 +62,29 @@ public class InformationHandlerTest {
 		
 		assertTrue(btcTrades.size() > 0);
 	}
+	
+	@Test
+	public void testGetStats() {
+		String bitcoinId = Constants.GDAX.ProductIds.BTC_PRODUCT_ID;
+		Stats btcStats = IH.getStats(bitcoinId);
+		
+		String etherumId = Constants.GDAX.ProductIds.ETH_PRODUCT_ID;
+		Stats ethStats = IH.getStats(etherumId);
+		
+		String litecoinId = Constants.GDAX.ProductIds.LTC_PRODUCT_ID;
+		Stats ltcStats = IH.getStats(litecoinId);
+		
+		assertTrue(btcStats != null);
+		assertTrue(ethStats != null);
+		assertTrue(ltcStats != null);
+	}
+	
+	/*@Test
+	public void testGetOrderBook() {
+		final String bitcoinId = Constants.GDAX.ProductIds.BTC_PRODUCT_ID;
+		OrderBook btcOrders = IH.getOrderBook(bitcoinId);
+		
+		assertTrue(btcOrders != null);
+	}*/
 
 }
