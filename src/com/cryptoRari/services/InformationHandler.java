@@ -61,8 +61,7 @@ public class InformationHandler {
 	 ************************************************/
 	public Ticker getTicker(String productId) {
 
-		final String URI = Constants.HTTP.SCHEME +
-					Constants.GDAX.HOST +
+		final String URI = Constants.URL +
 					Constants.GDAX.MarketPaths.PRODUCTS  +
 					productId +
 					Constants.GDAX.MarketPaths.TICKER;
@@ -81,8 +80,7 @@ public class InformationHandler {
 	 ************************************************/
 	public ArrayList<Trade> getTrades(String productId) {
 		
-		final String URI = Constants.HTTP.SCHEME +
-				Constants.GDAX.HOST +
+		final String URI = Constants.URL +
 				Constants.GDAX.MarketPaths.PRODUCTS  +
 				productId +
 				Constants.GDAX.MarketPaths.TRADES;
@@ -100,8 +98,7 @@ public class InformationHandler {
 	 * @productId - currency code for desired ticker
 	 ************************************************/
 	public Stats getStats(String productId) {
-		final String URI = Constants.HTTP.SCHEME +
-				Constants.GDAX.HOST +
+		final String URI = Constants.URL +
 				Constants.GDAX.MarketPaths.PRODUCTS  +
 				productId +
 				Constants.GDAX.MarketPaths.STATS;
@@ -119,8 +116,7 @@ public class InformationHandler {
 	 * @productId - currency code for desired ticker
 	 ************************************************/
 	public OrderBook getOrderBook(String productId) {
-		final String URI = Constants.HTTP.SCHEME +
-				Constants.GDAX.HOST +
+		final String URI = Constants.URL +
 				Constants.GDAX.MarketPaths.PRODUCTS  +
 				productId +
 				Constants.GDAX.MarketPaths.BOOK;
