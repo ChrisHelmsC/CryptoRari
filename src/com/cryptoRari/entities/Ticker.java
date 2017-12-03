@@ -1,4 +1,4 @@
-package entities;
+package com.cryptoRari.entities;
 
 public class Ticker {
 	private String trade_id;

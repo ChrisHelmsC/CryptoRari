@@ -1,3 +1,4 @@
+package com.cryptoRari.utilities;
 //Use this as a template to setup your environment. This will allow us to user
 //different accounts for our program.
 //

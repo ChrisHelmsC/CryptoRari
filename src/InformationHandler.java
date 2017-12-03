@@ -4,27 +4,34 @@ import java.net.URISyntaxException;
 import org.apache.http.client.utils.URIBuilder;
 import org.springframework.web.client.RestTemplate;
 import com.coinbase.exchange.api.accounts.*;
+import com.coinbase.exchange.api.entity.Product;
 import com.coinbase.exchange.api.products.ProductService;
-
-import entities.Ticker;
+import com.cryptoRari.entities.Ticker;
 
 public class InformationHandler {
-
-	public static void main(String [] args) {		
-		String bitcoinId = Constants.GDAX.ProductIds.BTC_PRODUCT_ID;
-		System.out.print(getTicker(bitcoinId).toString());
+	
+	URI URITemplate;
+	RestTemplate restTemplate;
+	
+	public InformationHandler() {
+		restTemplate = new RestTemplate();
+		/*
+		URITemplate = new URIBuilder();
+		URITemplate.setScheme(Constants.HTTP.SCHEME);
+		URITemplate.setHost(Constants.GDAX.SANDBOX_HOST);
+		URITemplate.build();// sandbox for testing
+		*/
 	}
 	
-	public static Ticker getTicker(String productId) {
-		String URI = Constants.HTTP.SCHEME +
-					Constants.GDAX.HOST +
-					Constants.GDAX.MarketPaths.PRODUCTS  +
-					productId +
-					Constants.GDAX.MarketPaths.TICKER;
-				
-		RestTemplate restTemplate = new RestTemplate();
-        Ticker ticker = restTemplate.getForObject(URI, Ticker.class);
-        
-        return ticker;
+	public Product getProducts(String currency) {
+		//RestTemplate restTemplate = new RestTemplate();
+		/*
+		if(currency.equals("BTC")) {
+			URITemplate.setPath(Constants.GDAX.MarketPaths.PRODUCTS);
+		}
+		URITemplate.build();
+		*/
+		Product newProduct = restTemplate.getForObject(URITemplate, Product.class);
+		return newProduct;
 	}
 }

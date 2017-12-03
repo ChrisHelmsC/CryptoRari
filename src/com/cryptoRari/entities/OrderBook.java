@@ -1,4 +1,4 @@
-package entities;
+package com.cryptoRari.entities;
 
 public class OrderBook {
 	//private Ask asks;
