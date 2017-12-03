@@ -1,5 +1,6 @@
+package entities;
 
-public class Product {
+public class Ticker {
 	private String trade_id;
 	private double price;
 	private double size;
@@ -7,6 +8,8 @@ public class Product {
 	private double ask;
 	private double volume;
 	private String time;
+	
+	public Ticker() {};
 	
 	public String getTrade_id() {
 		return trade_id;
@@ -63,3 +66,4 @@ public class Product {
 	}
 	
 }
+
