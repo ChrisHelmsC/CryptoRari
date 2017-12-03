@@ -5,7 +5,6 @@ public abstract class Constants {
 	public static final String URL = "https://api-public.sandbox.gdax.com";
 	//public static final String URL = "https://api.gdax.com";
 	
-	
 	//Http Constants
 	public static class HTTP {
 		public static final String SCHEME = "https://";
