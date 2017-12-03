@@ -51,22 +51,13 @@ public class InformationHandlerTest {
 	
 	@Test
 	public void testGetTrades() {
+		//Only check BTC trades to avoid GDAX request limit
 		String bitcoinId = Constants.GDAX.ProductIds.BTC_PRODUCT_ID;
 		ArrayList<Trade> btcTrades = IH.getTrades(bitcoinId);
 		
-		String etherumId = Constants.GDAX.ProductIds.ETH_PRODUCT_ID;
-		ArrayList<Trade> ethTrades = IH.getTrades(etherumId);
-		
-		String litecoinId = Constants.GDAX.ProductIds.LTC_PRODUCT_ID;
-		ArrayList<Trade> ltcTrades = IH.getTrades(litecoinId); 
-		
 		assertTrue(btcTrades != null);
-		assertTrue(ethTrades != null);
-		assertTrue(ltcTrades != null);
 		
 		assertTrue(btcTrades.size() > 0);
-		assertTrue(ethTrades.size() > 0);
-		assertTrue(ltcTrades.size() > 0);
 	}
 
 }
