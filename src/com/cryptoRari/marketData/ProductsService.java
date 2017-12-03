@@ -2,9 +2,11 @@ package com.cryptoRari.marketData;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.web.client.RestTemplate;
 
+import com.cryptoRari.entities.Candle;
 import com.cryptoRari.entities.OrderBook;
 import com.cryptoRari.entities.Product;
 import com.cryptoRari.entities.Stats;
@@ -95,9 +97,38 @@ public class ProductsService {
 		return new ArrayList<>(Arrays.asList(tradeList));
 	}
 	
-	public void getHistoricRates() {
+	/**
+	 * 
+	 * @param productId
+	 * @return ArrayList of candles
+	 */
+	public ArrayList<Candle> getHistoricRates(String productId) {
+		final String URI = Constants.HTTP.SCHEME +
+				Constants.GDAX.HOST +
+				Constants.GDAX.MarketPaths.PRODUCTS  +
+				productId +
+				Constants.GDAX.MarketPaths.CANDLES;
 		
-		
+		System.out.println("URI being used is " + URI);
+		Object[] array;
+		array = restTemplate.getForObject(URI, Object[].class);
+		System.out.println("ARRAY OBJECT = " + array);
+		ArrayList<Candle> candleList = new ArrayList<>();
+		for(int i = 0; i < 10/*array.length*/; i++) {
+			Candle temp = new Candle();
+			System.out.println(array[i].toString());
+			Double[] doubleArray = (Double[]) array[i];
+			System.out.println("tempArray = " + doubleArray);
+			//temp.setTime((long) tempArray[0]);
+			candleList.add(temp);
+		}
+//		Candle[] candleArray;
+//		candleArray = restTemplate.getForObject(URI, Candle[].class);
+//		List<Candle> candleList = new ArrayList<>();
+//		candleList = Arrays.asList(candleArray);
+		//ArrayList<Candle> candleList = new ArrayList<>(Arrays.asList(restTemplate.getForObject(URI, Candle[].class)));
+		//return (ArrayList<Candle>) candleList;
+		return candleList;
 	}
 	
 	/***********************************************
@@ -118,14 +149,6 @@ public class ProductsService {
 		Stats stats = template.getForObject(URI, Stats.class);
 		
 		return stats;
-	}
-	
-	public void getCurrencies() {
-		
-	}
-	
-	public void getTime() {
-		
 	}
 
 }
