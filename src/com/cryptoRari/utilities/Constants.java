@@ -1,6 +1,11 @@
 package com.cryptoRari.utilities;
 
 public abstract class Constants {
+	
+	public final String sandboxURL = "https://api-public.sandbox.gdax.com";
+	public final String liveURL = "https://api.gdax.com";
+	
+	
 	//Http Constants
 	public static class HTTP {
 		public static final String SCHEME = "https://";

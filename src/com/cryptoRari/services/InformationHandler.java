@@ -3,13 +3,15 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.springframework.web.client.RestTemplate;
+
 import com.cryptoRari.entities.OrderBook;
 import com.cryptoRari.entities.Product;
 import com.cryptoRari.entities.Stats;
 import com.cryptoRari.entities.Ticker;
 import com.cryptoRari.entities.Trade;
 import com.cryptoRari.utilities.Constants;
-import org.springframework.web.client.RestTemplate;
+
 
 /*According to the GDAX API, the account based headers are not needed
  * for just getting public market data on currencies. 
