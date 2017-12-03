@@ -1,4 +1,2 @@
-/bin/
-/src/Environment.java
-.gradle
-/build/
+build/
+.gradle/
