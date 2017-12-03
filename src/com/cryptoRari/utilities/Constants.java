@@ -21,6 +21,7 @@ public abstract class Constants {
 			public static final String BOOK = "/book";
 			public static final String TRADES = "/trades";
 			public static final String STATS = "/stats";
+			public static final String CANDLES = "/candles";
 		}
 		
 		public static class ProductIds {
