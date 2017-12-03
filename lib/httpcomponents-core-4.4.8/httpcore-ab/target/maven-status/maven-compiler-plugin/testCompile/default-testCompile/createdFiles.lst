@@ -1,5 +1,0 @@
-org/apache/http/benchmark/HttpServer.class
-org/apache/http/benchmark/HttpServer$1.class
-org/apache/http/benchmark/HttpServer$WorkerThread.class
-org/apache/http/benchmark/SmokeTest$1.class
-org/apache/http/benchmark/SmokeTest.class

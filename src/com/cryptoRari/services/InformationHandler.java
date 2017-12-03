@@ -1,25 +1,12 @@
 package com.cryptoRari.services;
-import java.io.IOException;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import org.springframework.web.client.RestTemplate;
-
-import com.coinbase.exchange.api.accounts.*;
-import com.coinbase.exchange.api.products.ProductService;
 import com.cryptoRari.entities.Product;
 import com.cryptoRari.entities.Ticker;
+import com.cryptoRari.entities.Trade;
 import com.cryptoRari.utilities.Constants;
+import org.springframework.web.client.RestTemplate;
 
 /*According to the GDAX API, the account based headers are not needed
  * for just getting public market data on currencies. 
@@ -79,5 +66,24 @@ public class InformationHandler {
         Ticker ticker = restTemplate.getForObject(URI, Ticker.class);
         
         return ticker;
+	}
+	
+	/***********************************************
+	 * getTrades()
+	 * Returns a list of the latest trades for a currency
+	 * 
+	 * @productId - currency code for desired ticker
+	 ************************************************/
+	public ArrayList<Trade> getTrades(String productId) {
+		
+		String URI = Constants.HTTP.SCHEME +
+				Constants.GDAX.HOST +
+				Constants.GDAX.MarketPaths.PRODUCTS  +
+				productId +
+				Constants.GDAX.MarketPaths.TRADES;
+		
+		RestTemplate template = new RestTemplate();
+		Trade[] tradeList = template.getForObject(URI, Trade[].class);
+		return new ArrayList<>(Arrays.asList(tradeList));
 	}
 }

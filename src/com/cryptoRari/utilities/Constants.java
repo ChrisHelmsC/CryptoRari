@@ -16,7 +16,8 @@ public abstract class Constants {
 			public static final String TIME = "/time";
 			public static final String PRODUCTS = "/products";
 			public static final String TICKER = "/ticker";
-			public static final String Book = "/book";
+			public static final String BOOK = "/book";
+			public static final String TRADES = "/trades";
 		}
 		
 		public static class ProductIds {

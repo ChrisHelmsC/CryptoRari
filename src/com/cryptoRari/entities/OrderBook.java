@@ -1,8 +1,8 @@
 package com.cryptoRari.entities;
 
 public class OrderBook {
-	//private Ask asks;
-	//private Bid bids;
+	private Order asks;
+	private Order bids;
 	private String sequence;
 	
 	public class Order {
