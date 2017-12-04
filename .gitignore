@@ -3,3 +3,4 @@ build/
 /bin/
 .classpath
 .settings
+src/com/cryptoRari/utilities/Environment.java
