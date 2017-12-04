@@ -3,9 +3,7 @@ package com.cryptoRari.marketData;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import org.springframework.web.client.RestTemplate;
-
 import com.cryptoRari.entities.Candle;
 import com.cryptoRari.entities.OrderBook;
 import com.cryptoRari.entities.Product;
