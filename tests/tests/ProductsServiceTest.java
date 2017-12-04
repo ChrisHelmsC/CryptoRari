@@ -99,5 +99,31 @@ public class ProductsServiceTest {
 		assertTrue(historicRates != null);
 		assertTrue(historicRates.size() > 0);
 	}
+	
+	
+	@Test
+	public void testGetOrderBookLvl1() {
+		ArrayList<OrderBook> orderBookList = new ArrayList<>();
+		String productId = Constants.GDAX.ProductIds.BTC_PRODUCT_ID;
+		orderBookList = PS.getOrderBookLvl1(productId);
+		
+		System.out.println("Order Book = " + orderBookList);
+		
+		assertTrue(orderBookList != null);
+		assertTrue(orderBookList.size() > 0);
+	}
+	
+	@Test
+	public void testGetOrderBookLvl2() {
+		ArrayList<OrderBook> orderBookList = new ArrayList<>();
+		String productId = Constants.GDAX.ProductIds.BTC_PRODUCT_ID;
+		orderBookList = PS.getOrderBookLvl2(productId);
+		
+		System.out.println("Order Book = " + orderBookList);
+		
+		assertTrue(orderBookList != null);
+		assertTrue(orderBookList.size() > 0);
+	}
+	
 
 }

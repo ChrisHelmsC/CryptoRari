@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.springframework.web.client.RestTemplate;
 
+import com.cryptoRari.entities.Ask;
+import com.cryptoRari.entities.Bid;
 import com.cryptoRari.entities.Candle;
 import com.cryptoRari.entities.OrderBook;
 import com.cryptoRari.entities.Product;
@@ -39,23 +41,175 @@ public class ProductsService {
 	}
 	
 	/***********************************************
-	 * getOrderBook()
-	 * Returns latest orders for a currency
+	 * getOrderBookLvl1()
+	 * Returns latest orders for a currency only the closest asks and bids
 	 * 
 	 * @productId - currency code for desired ticker
 	 ************************************************/
-	public OrderBook getOrderBook(String productId) {
+	public ArrayList<OrderBook> getOrderBookLvl1(String productId) {
 		final String URI = Constants.HTTP.SCHEME +
 				Constants.GDAX.HOST +
 				Constants.GDAX.MarketPaths.PRODUCTS  +
 				productId +
-				Constants.GDAX.MarketPaths.BOOK;
-			
-		RestTemplate template = new RestTemplate();
-		OrderBook orderBook = template.getForObject(URI, OrderBook.class);
+				Constants.GDAX.MarketPaths.BOOKLVL1;
 		
-		return orderBook;
+			
+		System.out.println("URI being used is " + URI);
+		
+		Object orderBookObject = restTemplate.getForObject(URI, Object.class);
+		
+		System.out.println("orderBookObject = " + orderBookObject);
+		
+		String objectString = orderBookObject.toString();
+		
+		String[] stringArray = objectString.substring(1, objectString.length() - 1).split(",");
+		
+		String sequence = stringArray[0];
+		sequence = sequence.substring(9, sequence.length());
+		System.out.println("sequence = " + sequence);
+		
+		String bidPrice = stringArray[1].toString();
+		bidPrice = bidPrice.substring(8, bidPrice.length());
+		System.out.println("bidPrice = " + bidPrice);
+		
+		String bidSize = stringArray[2].toString();
+		System.out.println("bidSize = " + bidSize);
+		
+		String bidNumOrders = stringArray[3].toString();
+		bidNumOrders = bidNumOrders.substring(1,  bidNumOrders.length() - 2);
+		System.out.println("bidNumOrders = " + bidNumOrders);
+		
+		String askPrice = stringArray[4].toString();
+		askPrice = askPrice.substring(8, askPrice.length());
+		System.out.println("askPrice = " + askPrice);
+		
+		String askSize = stringArray[5].toString();
+		System.out.println("askSize = " + askSize);
+		
+		String askNumOrders = stringArray[6].toString();
+		askNumOrders = askNumOrders.substring(1,  askNumOrders.length() - 2);
+		System.out.println("askNumOrders = " + askNumOrders);
+		
+		OrderBook tempOrderBook = new OrderBook();
+		tempOrderBook.setSequence(Double.parseDouble(sequence));
+		
+		Bid tempBid = new Bid(Double.parseDouble(bidPrice),
+								Double.parseDouble(bidSize),
+								Integer.parseInt(bidNumOrders));
+		
+		Bid[] tempBidArray = new Bid[1];
+		tempBidArray[0] = tempBid;
+		tempOrderBook.setBids(tempBidArray);
+		
+		Ask tempAsk = new Ask(Double.parseDouble(askPrice),
+								Double.parseDouble(askSize),
+								Integer.parseInt(askNumOrders));
+		Ask[] tempAskArray = new Ask[1];
+		tempAskArray[0] = tempAsk;
+		tempOrderBook.setAsks(tempAskArray);
+		
+		ArrayList<OrderBook> orderBookList = new ArrayList<>();
+		orderBookList.add(tempOrderBook);
+		
+		return orderBookList;
+		
+		
+		
 	}
+	
+	/***********************************************
+	 * getOrderBookLvl2()
+	 * Returns nearest 50 asks and bids
+	 * 
+	 * @productId - currency code for desired ticker
+	 ************************************************/
+	public ArrayList<OrderBook> getOrderBookLvl2(String productId) {
+		final String URI = Constants.HTTP.SCHEME +
+				Constants.GDAX.HOST +
+				Constants.GDAX.MarketPaths.PRODUCTS  +
+				productId +
+				Constants.GDAX.MarketPaths.BOOKLVL2;
+		
+			
+		System.out.println("URI being used is " + URI);
+		
+		Object orderBookObject = restTemplate.getForObject(URI, Object.class);
+		
+		System.out.println("orderBookObject = " + orderBookObject);
+		
+		String objectString = orderBookObject.toString();
+		
+		String[] stringArray = objectString.substring(1, objectString.length() - 1).split(",");
+		
+		String sequence = stringArray[0];
+		sequence = sequence.substring(9, sequence.length());
+		System.out.println("sequence = " + sequence);
+		
+		for(int i = 1; i < stringArray.length; i++) {
+			System.out.println("stringArray[" + i + "] = " + stringArray[i]);
+		
+			int selector = i%3;
+			
+		switch(selector) {
+		case 0:  
+		}
+			 
+		}
+		
+		
+		/*
+		
+		String bidPrice = stringArray[1].toString();
+		bidPrice = bidPrice.substring(8, bidPrice.length());
+		System.out.println("bidPrice = " + bidPrice);
+		
+		String bidSize = stringArray[2].toString();
+		System.out.println("bidSize = " + bidSize);
+		
+		String bidNumOrders = stringArray[3].toString();
+		bidNumOrders = bidNumOrders.substring(1,  bidNumOrders.length() - 2);
+		System.out.println("bidNumOrders = " + bidNumOrders);
+		
+		String askPrice = stringArray[4].toString();
+		askPrice = askPrice.substring(8, askPrice.length());
+		System.out.println("askPrice = " + askPrice);
+		
+		String askSize = stringArray[5].toString();
+		System.out.println("askSize = " + askSize);
+		
+		String askNumOrders = stringArray[6].toString();
+		askNumOrders = askNumOrders.substring(1,  askNumOrders.length() - 2);
+		System.out.println("askNumOrders = " + askNumOrders);
+		
+		OrderBook tempOrderBook = new OrderBook();
+		tempOrderBook.setSequence(Double.parseDouble(sequence));
+		
+		Bid tempBid = new Bid(Double.parseDouble(bidPrice),
+								Double.parseDouble(bidSize),
+								Integer.parseInt(bidNumOrders));
+		
+		Bid[] tempBidArray = new Bid[1];
+		tempBidArray[0] = tempBid;
+		tempOrderBook.setBids(tempBidArray);
+		
+		Ask tempAsk = new Ask(Double.parseDouble(askPrice),
+								Double.parseDouble(askSize),
+								Integer.parseInt(askNumOrders));
+		Ask[] tempAskArray = new Ask[1];
+		tempAskArray[0] = tempAsk;
+		tempOrderBook.setAsks(tempAskArray);
+		
+		ArrayList<OrderBook> orderBookList = new ArrayList<>();
+		orderBookList.add(tempOrderBook);
+		
+		return orderBookList;
+		*/
+		
+		return null;
+	
+	}
+	
+	
 	
 	/***********************************************
 	 * getTicker()
@@ -101,6 +255,8 @@ public class ProductsService {
 	 * 
 	 * @param productId
 	 * @return ArrayList of candles
+	 * 
+	 * I think this method is currently returning one too many candles, one empty one
 	 */
 	public ArrayList<Candle> getHistoricRates(String productId) {
 		final String URI = Constants.HTTP.SCHEME +
@@ -110,24 +266,29 @@ public class ProductsService {
 				Constants.GDAX.MarketPaths.CANDLES;
 		
 		System.out.println("URI being used is " + URI);
+		
 		Object[] array;
 		array = restTemplate.getForObject(URI, Object[].class);
 		System.out.println("ARRAY OBJECT = " + array);
 		ArrayList<Candle> candleList = new ArrayList<>();
-		for(int i = 0; i < 10/*array.length*/; i++) {
+		
+		for(int i = 0; i < array.length; i++) {
 			Candle temp = new Candle();
-			System.out.println(array[i].toString());
-			Double[] doubleArray = (Double[]) array[i];
-			System.out.println("tempArray = " + doubleArray);
-			//temp.setTime((long) tempArray[0]);
-			candleList.add(temp);
+			
+			String arrayString = array[i].toString();
+			//System.out.println("arrayString = " + arrayString);
+			String[] stringArray = ((String) array[i].toString().subSequence(1, arrayString.length() - 1)).split(",");
+			
+			temp.setTime(Long.parseLong(stringArray[0]));
+			temp.setLow(Double.parseDouble(stringArray[1]));
+			temp.setHigh(Double.parseDouble(stringArray[2]));
+			temp.setOpen(Double.parseDouble(stringArray[3]));
+			temp.setClose(Double.parseDouble(stringArray[4]));
+			temp.setVolume(Double.parseDouble(stringArray[5]));
+			
+			candleList.add(temp);	
 		}
-//		Candle[] candleArray;
-//		candleArray = restTemplate.getForObject(URI, Candle[].class);
-//		List<Candle> candleList = new ArrayList<>();
-//		candleList = Arrays.asList(candleArray);
-		//ArrayList<Candle> candleList = new ArrayList<>(Arrays.asList(restTemplate.getForObject(URI, Candle[].class)));
-		//return (ArrayList<Candle>) candleList;
+		System.out.println("candleList size = " + candleList.size());
 		return candleList;
 	}
 	
