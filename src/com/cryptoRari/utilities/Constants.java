@@ -2,8 +2,8 @@ package com.cryptoRari.utilities;
 
 public abstract class Constants {
 	
-	//public static final String URL = "https://api-public.sandbox.gdax.com";
-	public static final String URL = "https://api.gdax.com";
+	public static final String URL = "https://api-public.sandbox.gdax.com";
+	//public static final String URL = "https://api.gdax.com";
 	
 	//Http Constants
 	public static class HTTP {
@@ -30,6 +30,7 @@ public abstract class Constants {
 		
 		public static class PrivatePaths {
 			public static final String ACCOUNTS = "/accounts";
+			public static final String ACCOUNT_HISTORY = "/ledger";
 		}
 		
 		public static class ProductIds {

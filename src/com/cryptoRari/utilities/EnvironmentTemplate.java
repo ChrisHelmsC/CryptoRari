@@ -10,4 +10,8 @@ public class EnvironmentTemplate {
 	public static final String API_KEY = "";
 	public static final String PASSPHRASE = "";
 	public static final String SECRET = "";
+	
+	
+	//Run AccountsServiceTest and view console output to find out account IDs
+	public static final String BTC_ACCOUNT_ID = "";
 }
