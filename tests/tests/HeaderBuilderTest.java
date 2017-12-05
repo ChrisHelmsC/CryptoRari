@@ -4,9 +4,9 @@ import org.junit.Test;
 import org.springframework.http.HttpHeaders;
 
 import com.cryptoRari.marketData.TimeService;
+import com.cryptoRari.personal.HeaderBuilder;
 import com.cryptoRari.utilities.Constants;
 import com.cryptoRari.utilities.Environment;
-import com.cryptoRari.utilities.HeaderBuilder;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 public class HeaderBuilderTest {

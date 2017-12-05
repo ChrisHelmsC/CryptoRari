@@ -1,4 +1,4 @@
-package com.cryptoRari.utilities;
+package com.cryptoRari.personal;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -9,6 +9,9 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.springframework.http.HttpHeaders;
 
+import com.cryptoRari.utilities.Constants;
+import com.cryptoRari.utilities.Constants.GDAX;
+import com.cryptoRari.utilities.Constants.GDAX.Headers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -22,7 +25,19 @@ public class HeaderBuilder {
 	private String path;
 	private String method;
 	
-	public HeaderBuilder (String accessKey, String timeStamp, String passPhrase, String body, String path, String method, String secret) {
+	/***********************************************
+	 * HeaderBuilder
+	 * 
+	 * @accessKey - User's API key from GDAX
+	 * @passPhrase - User's GDAX generated API key
+	 * @secret - User's GDAX generated secret
+	 * @timeStamp - Current timestamp
+	 * @body - body of request headers will be built for
+	 * @path - URL path of request (not include scheme, host, etc)
+	 * @methed - Type of request headers will be built for IN CAPS (Ex: GET, POST, etc)
+	 * 
+	 ************************************************/
+	public HeaderBuilder (String accessKey, String passPhrase, String secret, String timeStamp,  String body, String path, String method) {
 		this.accessKey = accessKey;
 		this.timeStamp = timeStamp;
 		this.passPhrase = passPhrase;
@@ -32,6 +47,11 @@ public class HeaderBuilder {
 		this.secret = secret;
 	}
 	
+	/***********************************************
+	 * buildHeaders()
+	 * 
+	 * Returns GDAX required headers based on HeaderBuilder attributes
+	 ************************************************/
 	public HttpHeaders buildHeaders() throws JsonProcessingException {
 		//JSON encode body for signature
 		ObjectMapper mapper = new ObjectMapper();
@@ -41,7 +61,7 @@ public class HeaderBuilder {
 		String full = timeStamp + method + path + encodedBody;
 		
 		//Hash full string to create signed header
-		String signature = hashHmac(full, secret);
+		String signature = getSignature(full, secret);
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.add(Constants.GDAX.Headers.CB_ACCESS_SIGN, signature);
@@ -52,21 +72,32 @@ public class HeaderBuilder {
 		return headers;
 	}
 	
-	private String hashHmac(String str, String secret) {
+	/***********************************************
+	 * getSignature()
+	 * 
+	 * returns a signature string representing the GDAX
+	 * required header CB_ACCESS_SIGN
+	 * 
+	 * @encryptThis - the string that will be encrypted.
+	 * 	Should consist of concat(epochTimeStamp, request method, request path, request body)
+	 * @secret - secret used to encode message
+	 ************************************************/
+	private String getSignature(String encryptThis, String secret) {
 		Mac sha256_HMAC;
 		try {
 			//Set MAC algorithm
 			sha256_HMAC = Mac.getInstance("HmacSHA256");
 		
-			//Attempt to create mac with secret key
+			//Decode key into bytes, use it to create key
 			byte[] bytes = Base64.getDecoder().decode(secret);
 			SecretKeySpec secretKey = new SecretKeySpec(bytes, "HmacSHA256");
 		
+			//Create mac which will use key to encrypt a string
 			sha256_HMAC.init(secretKey);
 			
-			String hash = Base64.getEncoder().encodeToString(sha256_HMAC.doFinal(str.getBytes()));
-			//= Base64.encodeToString(sha256_HMAC.doFinal(str.getBytes()), Base64.DEFAULT);
-			return hash;
+			//Encrypt the string, encode in BASE64
+			String hash = Base64.getEncoder().encodeToString(sha256_HMAC.doFinal(encryptThis.getBytes()));
+						return hash;
 		} catch (InvalidKeyException e) {
 			System.out.println("Mac cannot be initialzied with the given key");
 			e.printStackTrace();
