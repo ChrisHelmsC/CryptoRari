@@ -141,20 +141,165 @@ public class ProductsService {
 		
 		String[] stringArray = objectString.substring(1, objectString.length() - 1).split(",");
 		
+		int arraySize = stringArray.length;
+		System.out.println("arraySize = " + arraySize);
+		
 		String sequence = stringArray[0];
 		sequence = sequence.substring(9, sequence.length());
 		System.out.println("sequence = " + sequence);
 		
-		for(int i = 1; i < stringArray.length; i++) {
-			System.out.println("stringArray[" + i + "] = " + stringArray[i]);
 		
-			int selector = i%3;
+		
+		Bid[] bidArray = new Bid[50];
+		
+		int index = 0;
+		
+		String tempString;
+		int selector = 0;
+		
+		double bidPrice = 0;
+		double bidSize = 0;
+		int bidNumOrders = 0;
+		
+		for(int i = 1; i < (arraySize + 1)/2; i++) {
+			System.out.println("stringArray[" + i + "] = " + stringArray[i] + "      i = " + i);
+		
+			selector = i%3;
+			
 			
 		switch(selector) {
-		case 0:  
+		case 0:  tempString = stringArray[i];
+		System.out.println("case 0");
+			if(tempString.substring(tempString.length() - 2, tempString.length()).equals("]]")) {
+				tempString = tempString.substring(1, tempString.length() - 2);
+			}
+			else {
+				tempString = tempString.substring(1, tempString.length() - 1);
+			}
+			System.out.println(tempString);
+			bidNumOrders = Integer.parseInt(tempString);
+			bidArray[index] = new Bid(bidPrice, bidSize, bidNumOrders);
+			index++;
+			System.out.println("bidPrice = " + bidPrice);
+			System.out.println("bidsize = " + bidSize);
+			System.out.println("bidNumOrders = " + bidNumOrders);
+			
+			break;
+		case 1:	 tempString = stringArray[i];
+		System.out.println("case 1");
+			if(i == 1) {
+				tempString = tempString.substring(8, tempString.length());
+			}
+			else {
+				//tempString = tempString.substring(2, tempString.length());
+				if(tempString.length() > 3) {
+					System.out.println("greater than 3");
+					tempString = tempString.substring(2, tempString.length() - 2);
+				}
+				else {
+					System.out.println("less than 3");
+					tempString = tempString.substring(2, tempString.length());
+				}
+			}
+			System.out.println(tempString);
+			bidPrice = Double.parseDouble(tempString);
+			System.out.println("bidPriceConverted = " + bidPrice);
+			break;
+		case 2:	tempString = stringArray[i];
+		System.out.println("case 2");
+		if(tempString.length() > 3) {
+			tempString = tempString.substring(1, tempString.length() - 2);
+			System.out.println("greater than 3");
 		}
+		else {
+			tempString = tempString.substring(1, tempString.length());
+			System.out.println("less than 3");
+		}
+			System.out.println(tempString);
+			bidSize = Double.parseDouble(tempString);
+			break;
+		}
+		}
+		
+		
+		Ask[] askArray = new Ask[50];
+		
+		index = 0;
+		
+		double askPrice = 0;
+		double askSize = 0;
+		int askNumOrders = 0;
+		
+		for(int p = (arraySize + 1)/2; p < arraySize; p++) {
+			System.out.println("stringArray[" + p + "] = " + stringArray[p]);
+		
+			selector = p%3;
+			
+			switch(selector) {
+			case 0:  tempString = stringArray[p];
+			System.out.println("case 0");
+				if(p == arraySize - 1) {
+					tempString = tempString.substring(1, tempString.length() - 2);
+				}
+				else {
+					tempString = tempString.substring(1, tempString.length() - 1);
+				}
+				System.out.println(tempString);
+				askNumOrders = Integer.parseInt(tempString);
+				askArray[index] = new Ask(askPrice, askSize, askNumOrders);
+				index++;
+				System.out.println("askPrice = " + askPrice);
+				System.out.println("asksize = " + askSize);
+				System.out.println("askNumOrders = " + askNumOrders);
+				
+				break;
+			case 1:	 tempString = stringArray[p];
+			System.out.println("case 1");
+				if(p == (arraySize + 1) / 2) {
+					tempString = tempString.substring(8, tempString.length());
+				}
+				else {
+					//tempString = tempString.substring(2, tempString.length());
+					if(tempString.length() > 3) {
+						System.out.println("greater than 3");
+						tempString = tempString.substring(2, tempString.length() - 2);
+					}
+					else {
+						System.out.println("less than 3");
+						tempString = tempString.substring(2, tempString.length());
+					}
+				}
+				System.out.println(tempString);
+				askPrice = Double.parseDouble(tempString);
+				break;
+			case 2:	tempString = stringArray[p];
+			System.out.println("case 2");
+			System.out.println("p = " + p);
+				if(tempString.length() > 3) {
+					tempString = tempString.substring(1, tempString.length());
+					System.out.println("greater than 3");
+				}
+				else {
+					tempString = tempString.substring(1, tempString.length() - 1);
+					System.out.println("less than 3");
+				}
+				System.out.println(tempString);
+				askSize = Double.parseDouble(tempString);
+				break;
+			}
 			 
 		}
+		
+		
+		OrderBook tempOrderBook = new OrderBook();
+		tempOrderBook.setSequence(Integer.parseInt(sequence));
+		tempOrderBook.setBids(bidArray);
+		tempOrderBook.setAsks(askArray);
+		
+		ArrayList<OrderBook> tempList = new ArrayList<>();
+		tempList.add(tempOrderBook);
+		
+		return tempList;
 		
 		
 		/*
@@ -204,8 +349,6 @@ public class ProductsService {
 		
 		return orderBookList;
 		*/
-		
-		return null;
 	
 	}
 	

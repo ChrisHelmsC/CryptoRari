@@ -13,8 +13,8 @@ public abstract class Constants {
 	
 	//GDAX Constants
 	public static class GDAX {
-		public static final String HOST = "api.gdax.com";
-		//public static final String HOST = "api-public.sandbox.gdax.com";
+		//public static final String HOST = "api.gdax.com";
+		public static final String HOST = "api-public.sandbox.gdax.com";
 		
 		public static class MarketPaths {
 			public static final String CURRENCIES = "/currencies";
