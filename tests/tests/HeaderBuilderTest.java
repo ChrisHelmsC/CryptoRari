@@ -1,5 +1,7 @@
 package tests;
 
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 import org.springframework.http.HttpHeaders;
 
@@ -22,16 +24,18 @@ public class HeaderBuilderTest {
 	public void buildingOfHeaderTest() {
 		this.headerBuilder = new HeaderBuilder(
 				Environment.API_KEY,
-				timeService.getTime().getEpoch(),
 				Environment.PASSPHRASE,
-				"",
-				Constants.GDAX.PrivatePaths.ACCOUNTS,
-				Constants.HTTP.Methods.GET,
 				Environment.SECRET
 				);
 		
+		headerBuilder.setMethodAttributes(timeService.getTime().getEpoch(),
+										"",
+										Constants.GDAX.PrivatePaths.ACCOUNTS,
+										Constants.HTTP.Methods.GET);
+		
 		try {
 			HttpHeaders header = headerBuilder.buildHeaders();
+			assertTrue(header != null);
 			System.out.println(header.toString());
 		} catch (JsonProcessingException e) {
 			System.out.println("Failure");

@@ -10,6 +10,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import com.cryptoRari.entities.Account;
+import com.cryptoRari.entities.Hold;
 import com.cryptoRari.entities.Ledger;
 import com.cryptoRari.marketData.TimeService;
 import com.cryptoRari.utilities.Constants;
@@ -19,16 +20,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AccountsService {
 
+	private HeaderBuilder headerBuilder;
 	private RestTemplate restTemplate;
-	private String apiKey;
-	private String passPhrase;
-	private String secret;
 	
 	public AccountsService(String apiKey, String passPhrase, String secret) {
+		this.headerBuilder = new HeaderBuilder(apiKey, passPhrase, secret);
 		this.restTemplate = new RestTemplate();
-		this.apiKey = apiKey;
-		this.passPhrase = passPhrase;
-		this.secret = secret;
 	}
 	
 	/***********************************************
@@ -36,29 +33,19 @@ public class AccountsService {
 	 * Returns a list of accounts for current user
 	 * 
 	 * @epochTime - current epoch time
-	 * @apiKey - users GDAX API key
-	 * @passPhrase - users generated GDAX passPhrase
-	 * @secret - users GDAX secret key
 	 ************************************************/
 	public ArrayList<Account> getAccounts(String epochTime) {
 		String URI = Constants.URL +
 					Constants.GDAX.PrivatePaths.ACCOUNTS;
 		
-		//Create strings native to this type of request
-		String accountsMethod = Constants.HTTP.Methods.GET;
-		String accountsPath = Constants.GDAX.PrivatePaths.ACCOUNTS;
+		//Get requests have no body
 		String accountsBody = "";
 		
-		//Create HeaderBuilder with request info
-		HeaderBuilder headerBuilder = new HeaderBuilder(
-				apiKey,
-				passPhrase,
-				secret,
-				epochTime,
-				accountsBody,
-				accountsPath,
-				accountsMethod
-				);
+		//Setup headerBuilder method attributes
+		headerBuilder.setMethodAttributes(epochTime, 
+										accountsBody, 
+										Constants.GDAX.PrivatePaths.ACCOUNTS, 
+										Constants.HTTP.Methods.GET);
 		
 		try {
 			//Build headers to add to request
@@ -88,6 +75,13 @@ public class AccountsService {
 		return null;
 	}
 	
+	/***********************************************
+	 * getAccountHistory()
+	 * Returns a list of accounts for current user
+	 * 
+	 * @accountId - account ID to get history for
+	 * @epochTime - current epoch time
+	 ************************************************/
 	public ArrayList<Ledger> getAccountHistory(String accountId, String epochTime) {
 		String URI = Constants.URL +
 					Constants.GDAX.PrivatePaths.ACCOUNTS +
@@ -95,22 +89,15 @@ public class AccountsService {
 					Constants.GDAX.PrivatePaths.ACCOUNT_HISTORY;
 		
 		//Create native strings
-		String accountHistoryMethod = Constants.HTTP.Methods.GET;
 		String accountHistoryBody = "";
 		String accountHistoryPath = Constants.GDAX.PrivatePaths.ACCOUNTS +
 									"/" + accountId +
 									Constants.GDAX.PrivatePaths.ACCOUNT_HISTORY;
 		
-		//Create HeaderBuilder with request info
-		HeaderBuilder headerBuilder = new HeaderBuilder(
-					apiKey,
-					passPhrase,
-					secret,
-					epochTime,
-					accountHistoryBody,
-					accountHistoryPath,
-					accountHistoryMethod
-					);
+		headerBuilder.setMethodAttributes(epochTime,
+											accountHistoryBody,
+											accountHistoryPath, 
+											Constants.HTTP.Methods.GET);
 		
 		try {
 			//Build headers to add to request
@@ -134,6 +121,58 @@ public class AccountsService {
 			e.printStackTrace();
 		} catch (IOException e) {
 			System.out.println("Could not parse request body for ledger data.");
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	/***********************************************
+	 * getHolds()
+	 * Returns a list of holds for a specific account
+	 * 
+	 * @accountId - account ID to get history for
+	 * @epochTime - current epoch time
+	 ************************************************/
+	public ArrayList<Hold> getHolds(String accountId, String epochTime) {
+		String URI = Constants.URL +
+				Constants.GDAX.PrivatePaths.ACCOUNTS +
+				"/" + accountId +
+				Constants.GDAX.PrivatePaths.HOLDS;
+		
+		//Create native strings
+		String holdsBody = "";
+		String holdsPath = Constants.GDAX.PrivatePaths.ACCOUNTS +
+							"/" + accountId +
+							Constants.GDAX.PrivatePaths.HOLDS;
+		
+		headerBuilder.setMethodAttributes(epochTime, 
+										holdsBody, 
+										holdsPath, 
+										Constants.HTTP.Methods.GET);
+		
+		try {
+			//Build headers to add to request
+			HttpHeaders httpHeaders = headerBuilder.buildHeaders();
+			
+			//Create entity using headers
+			HttpEntity<String> entity = new HttpEntity<String>(httpHeaders);
+			
+			//Exchange our request for the servers response
+	        ResponseEntity<String> response = restTemplate.exchange(URI, HttpMethod.GET, entity, String.class);
+	        
+	        //Parse response body for hold array data
+	        String responseBody = response.getBody();
+	        Hold[] holdsArray = new ObjectMapper().readValue(responseBody, Hold[].class);
+	        ArrayList<Hold> holdList = new ArrayList<Hold>(Arrays.asList(holdsArray));
+	        
+	        //Return list of accounts
+	        return holdList;
+	        
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Could not parse request body for hold data.");
 			e.printStackTrace();
 		}
 		

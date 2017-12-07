@@ -31,6 +31,7 @@ public abstract class Constants {
 		public static class PrivatePaths {
 			public static final String ACCOUNTS = "/accounts";
 			public static final String ACCOUNT_HISTORY = "/ledger";
+			public static final String HOLDS = "/holds";
 		}
 		
 		public static class ProductIds {

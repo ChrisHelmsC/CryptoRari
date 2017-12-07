@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 import org.junit.Test;
 import com.cryptoRari.entities.Account;
+import com.cryptoRari.entities.Hold;
 import com.cryptoRari.entities.Ledger;
 import com.cryptoRari.marketData.TimeService;
 import com.cryptoRari.personal.AccountsService;
@@ -49,6 +50,16 @@ public class AccountsServiceTest {
 		System.out.println("Account history" + accountHistory);
 		
 		assertTrue(accountHistory != null);
-		assertTrue(accountHistory.size() > 0);
+	}
+	
+	@Test
+	public void getHolds() {
+		String accountId = Environment.BTC_ACCOUNT_ID;
+		String epochTime = timeService.getTime().getEpoch();
+		ArrayList<Hold> holdList = accountsService.getHolds(accountId, epochTime);
+		
+		System.out.println(holdList);
+		
+		assertTrue(holdList != null);
 	}
 }

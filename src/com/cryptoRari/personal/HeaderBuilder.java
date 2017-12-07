@@ -37,14 +37,28 @@ public class HeaderBuilder {
 	 * @methed - Type of request headers will be built for IN CAPS (Ex: GET, POST, etc)
 	 * 
 	 ************************************************/
-	public HeaderBuilder (String accessKey, String passPhrase, String secret, String timeStamp,  String body, String path, String method) {
+	public HeaderBuilder (String accessKey, String passPhrase, String secret) {
 		this.accessKey = accessKey;
-		this.timeStamp = timeStamp;
 		this.passPhrase = passPhrase;
+		this.secret = secret;
+	}
+	
+	/************************************************
+	 * setMethodAttributes()
+	 * 
+	 * Sets attributes required for building method headers
+	 * 
+	 * @timeStamp - Current timestamp
+	 * @body - body of request headers will be built for
+	 * @path - URL path of request (not include scheme, host, etc)
+	 * @method - Type of request headers will be built for IN CAPS (Ex: GET, POST, etc)
+	 * 
+	 ************************************************/
+	public void setMethodAttributes(String timeStamp, String body, String path, String method) {
+		this.timeStamp = timeStamp;
 		this.body = body;
 		this.path = path;
 		this.method = method;
-		this.secret = secret;
 	}
 	
 	/***********************************************
@@ -107,5 +121,37 @@ public class HeaderBuilder {
 		}
 		
 		return null;
+	}
+
+	public String getTimeStamp() {
+		return timeStamp;
+	}
+
+	public void setTimeStamp(String timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+
+	public String getBody() {
+		return body;
+	}
+
+	public void setBody(String body) {
+		this.body = body;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public String getMethod() {
+		return method;
+	}
+
+	public void setMethod(String method) {
+		this.method = method;
 	}
 }
