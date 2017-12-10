@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CryptoRari.iml" filepath="$PROJECT_DIR$/.idea/CryptoRari.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CryptoRari_main.iml" filepath="$PROJECT_DIR$/.idea/modules/CryptoRari_main.iml" group="CryptoRari" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CryptoRari_test.iml" filepath="$PROJECT_DIR$/.idea/modules/CryptoRari_test.iml" group="CryptoRari" />
     </modules>
   </component>
 </project>

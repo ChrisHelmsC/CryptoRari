@@ -11,6 +11,8 @@ public abstract class Constants {
 		
 		public static class Methods {
 			public static final String GET = "GET";
+			public static final String POST = "POST";
+			public static final String DELETE = "DELETE";
 		}
 	}
 	
@@ -32,6 +34,7 @@ public abstract class Constants {
 			public static final String ACCOUNTS = "/accounts";
 			public static final String ACCOUNT_HISTORY = "/ledger";
 			public static final String HOLDS = "/holds";
+			public static final String ORDERS = "/orders";
 		}
 		
 		public static class ProductIds {
@@ -41,7 +44,33 @@ public abstract class Constants {
 		}
 		
 		public static class Currencies {
-			public static final String BITCOIN = "BTC";
+			public static final String BITCOIN = "BTC-USD";
+		}
+
+		public static class Orders {
+			public static class Side {
+				public static final String BUY = "buy";
+				public static final String SELL = "sell";
+			}
+
+			public static class Type {
+				public static final String LIMIT = "limit";
+				public static final String MARKET = "market";
+				public static final String STOP = "stop";
+			}
+
+			public class TimeInForce {
+				public static final String GTC = "GTC";
+				public static final String GTT = "GTT";
+				public static final String IOC = "IOC";
+				public static final String FOK = "FOK";
+			}
+
+			public class CancelAfter {
+				public static final String MIN = "min";
+				public static final String HOUR = "hour";
+				public static final String DAY = "day";
+			}
 		}
 		
 		public static class Headers {

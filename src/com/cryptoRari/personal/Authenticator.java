@@ -15,7 +15,7 @@ import com.cryptoRari.utilities.Constants.GDAX.Headers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class HeaderBuilder {
+public class Authenticator {
 	
 	private String accessKey;
 	private String timeStamp;
@@ -26,7 +26,7 @@ public class HeaderBuilder {
 	private String method;
 	
 	/***********************************************
-	 * HeaderBuilder
+	 * Authenticator
 	 * 
 	 * @accessKey - User's API key from GDAX
 	 * @passPhrase - User's GDAX generated API key
@@ -37,7 +37,7 @@ public class HeaderBuilder {
 	 * @methed - Type of request headers will be built for IN CAPS (Ex: GET, POST, etc)
 	 * 
 	 ************************************************/
-	public HeaderBuilder (String accessKey, String passPhrase, String secret) {
+	public Authenticator(String accessKey, String passPhrase, String secret) {
 		this.accessKey = accessKey;
 		this.passPhrase = passPhrase;
 		this.secret = secret;
@@ -64,15 +64,12 @@ public class HeaderBuilder {
 	/***********************************************
 	 * buildHeaders()
 	 * 
-	 * Returns GDAX required headers based on HeaderBuilder attributes
+	 * Returns GDAX required headers based on Authenticator attributes
 	 ************************************************/
-	public HttpHeaders buildHeaders() throws JsonProcessingException {
-		//JSON encode body for signature
-		ObjectMapper mapper = new ObjectMapper();
-		String encodedBody = (body.isEmpty()) ? body : mapper.writeValueAsString(body);
+	public HttpHeaders buildHeaders() {
 		
 		//Concatenate full string
-		String full = timeStamp + method + path + encodedBody;
+		String full = timeStamp + method + path + body;
 		
 		//Hash full string to create signed header
 		String signature = getSignature(full, secret);

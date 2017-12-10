@@ -4,3 +4,6 @@ build/
 .classpath
 .settings
 src/com/cryptoRari/utilities/Environment.java
+CryptoRari.iml
+CryptoRari.ipr
+CryptoRari.iws

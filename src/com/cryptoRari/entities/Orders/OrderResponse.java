@@ -1,4 +1,4 @@
-package com.cryptoRari.entities;
+package com.cryptoRari.entities.Orders;
 
 public class OrderResponse {
 	String id;
