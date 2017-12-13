@@ -1,5 +1,8 @@
 package com.cryptoRari.entities.Orders;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract  class AccountOrder {
 	String client_oid;
 	String type;
@@ -9,13 +12,13 @@ public abstract  class AccountOrder {
 	boolean overdraft_enabled;
 	double funding_amount;
 
-	/*public String getClient_oid() {
+	public String getClient_oid() {
 		return client_oid;
 	}
 
 	public void setClient_oid(String client_oid) {
 		this.client_oid = client_oid;
-	}*/
+	}
 
 	public String getType() {
 		return type;
@@ -47,5 +50,21 @@ public abstract  class AccountOrder {
 
 	public void setStp(String stp) {
 		this.stp = stp;
+	}
+
+	public boolean isOverdraft_enabled() {
+		return overdraft_enabled;
+	}
+
+	public void setOverdraft_enabled(boolean overdraft_enabled) {
+		this.overdraft_enabled = overdraft_enabled;
+	}
+
+	public double getFunding_amount() {
+		return funding_amount;
+	}
+
+	public void setFunding_amount(double funding_amount) {
+		this.funding_amount = funding_amount;
 	}
 }

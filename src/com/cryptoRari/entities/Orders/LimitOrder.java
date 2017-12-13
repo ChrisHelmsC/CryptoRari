@@ -1,8 +1,8 @@
 package com.cryptoRari.entities.Orders;
 
 public class LimitOrder extends AccountOrder{
-    double price;
-    double size;
+    String price;
+    String size;
     String time_in_force;
     String cancel_after;
     boolean post_only;
@@ -11,7 +11,7 @@ public class LimitOrder extends AccountOrder{
 
     }
 
-    public LimitOrder(double price, double size, String time_in_force, String cancel_after, boolean post_only) {
+    public LimitOrder(String price, String size, String time_in_force, String cancel_after, boolean post_only) {
         this.price = price;
         this.size = size;
         this.time_in_force = time_in_force;
@@ -19,19 +19,19 @@ public class LimitOrder extends AccountOrder{
         this.post_only = post_only;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public double getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(double size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

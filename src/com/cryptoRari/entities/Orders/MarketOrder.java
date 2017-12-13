@@ -1,26 +1,29 @@
 package com.cryptoRari.entities.Orders;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class MarketOrder extends AccountOrder {
-    double size;
-    double funds;
+    String size;
+    String funds;
 
     public MarketOrder() {
 
     }
 
-    public double getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(double size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
-    public double getFunds() {
+    public String getFunds() {
         return funds;
     }
 
-    public void setFunds(double funds) {
+    public void setFunds(String funds) {
         this.funds = funds;
     }
 

@@ -3,17 +3,12 @@ package com.cryptoRari.personal;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
-
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-
 import org.springframework.http.HttpHeaders;
-
 import com.cryptoRari.utilities.Constants;
-import com.cryptoRari.utilities.Constants.GDAX;
 import com.cryptoRari.utilities.Constants.GDAX.Headers;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 public class Authenticator {
 	
@@ -75,6 +70,8 @@ public class Authenticator {
 		String signature = getSignature(full, secret);
 		
 		HttpHeaders headers = new HttpHeaders();
+		headers.add(Headers.ACCEPT, Constants.HTTP.DataTypes.JSON);
+		headers.add(Headers.CONTENT_TYPE, Constants.HTTP.DataTypes.JSON);
 		headers.add(Constants.GDAX.Headers.CB_ACCESS_SIGN, signature);
 		headers.add(Constants.GDAX.Headers.CB_ACCESS_KEY, this.accessKey);
 		headers.add(Constants.GDAX.Headers.CB_ACCESS_TIMESTAMP, this.timeStamp);

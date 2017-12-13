@@ -14,6 +14,10 @@ public abstract class Constants {
 			public static final String POST = "POST";
 			public static final String DELETE = "DELETE";
 		}
+
+		public static class DataTypes {
+			public static final String  JSON = "application/json";
+		}
 	}
 	
 	//GDAX Constants
@@ -78,6 +82,8 @@ public abstract class Constants {
 			public static final String CB_ACCESS_SIGN = "CB-ACCESS-SIGN";
 			public static final String CB_ACCESS_TIMESTAMP = "CB-ACCESS-TIMESTAMP";
 			public static final String CS_ACCESS_PASSPHRASE = "CB-ACCESS-PASSPHRASE";
+			public static final String ACCEPT = "accept";
+			public static final String CONTENT_TYPE = "content-type";
 		}
 	}
 }

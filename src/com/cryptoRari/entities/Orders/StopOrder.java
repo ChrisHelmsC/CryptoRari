@@ -1,41 +1,41 @@
 package com.cryptoRari.entities.Orders;
 
-public class StopOrder {
-    double price;
-    double size;
-    double funds;
+public class StopOrder extends AccountOrder{
+    String price;
+    String size;
+    String funds;
 
     public StopOrder() {
 
     }
 
-    public StopOrder(double price, double size, double funds) {
+    public StopOrder(String price, String size, String funds) {
         this.price = price;
         this.size = size;
         this.funds = funds;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public double getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(double size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
-    public double getFunds() {
+    public String getFunds() {
         return funds;
     }
 
-    public void setFunds(double funds) {
+    public void setFunds(String funds) {
         this.funds = funds;
     }
 
