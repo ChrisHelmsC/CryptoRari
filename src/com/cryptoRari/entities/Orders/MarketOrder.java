@@ -8,7 +8,7 @@ public class MarketOrder extends AccountOrder {
     String funds;
 
     public MarketOrder() {
-
+        super();
     }
 
     public String getSize() {

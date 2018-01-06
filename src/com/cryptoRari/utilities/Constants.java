@@ -49,9 +49,15 @@ public abstract class Constants {
 		
 		public static class Currencies {
 			public static final String BITCOIN = "BTC-USD";
+			public static final String ETHEREUM = "ETH-USD";
+			public static final String LITECOIN = "LTC-USD";
 		}
 
 		public static class Orders {
+			public static class Parameters {
+				public static final String PRODUCT_ID = "product_id";
+			}
+
 			public static class Side {
 				public static final String BUY = "buy";
 				public static final String SELL = "sell";
@@ -74,6 +80,15 @@ public abstract class Constants {
 				public static final String MIN = "min";
 				public static final String HOUR = "hour";
 				public static final String DAY = "day";
+			}
+
+			public class Statuses {
+				public static final String OPEN = "open";
+				public static final String PENDING = "pending";
+				public static final String ACTIVE = "active";
+				public static final String DONE = "done";
+				public final static String SETTLED = "settled";
+				public final static String ALL = "all";
 			}
 		}
 		

@@ -2,6 +2,8 @@ package com.cryptoRari.entities.Orders;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.UUID;
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract  class AccountOrder {
 	String client_oid;
@@ -11,6 +13,10 @@ public abstract  class AccountOrder {
 	String stp;
 	boolean overdraft_enabled;
 	double funding_amount;
+
+	public AccountOrder() {
+		this.client_oid = UUID.randomUUID().toString();
+	}
 
 	public String getClient_oid() {
 		return client_oid;
