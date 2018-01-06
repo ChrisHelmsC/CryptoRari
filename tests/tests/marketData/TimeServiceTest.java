@@ -1,4 +1,4 @@
-package tests;
+package tests.marketData;
 
 import static org.junit.Assert.assertTrue;
 

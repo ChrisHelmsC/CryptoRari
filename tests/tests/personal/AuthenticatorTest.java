@@ -1,46 +1,41 @@
-package tests;
+package tests.personal;
 
 import static org.junit.Assert.assertTrue;
 
+import com.cryptoRari.personal.Authenticator;
 import org.junit.Test;
 import org.springframework.http.HttpHeaders;
 
 import com.cryptoRari.marketData.TimeService;
-import com.cryptoRari.personal.HeaderBuilder;
 import com.cryptoRari.utilities.Constants;
 import com.cryptoRari.utilities.Environment;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-public class HeaderBuilderTest {
+public class AuthenticatorTest {
 	
-	HeaderBuilder headerBuilder;
+	Authenticator authenticator;
 	TimeService timeService;
 	
-	public HeaderBuilderTest() {
+	public AuthenticatorTest() {
 		this.timeService = new TimeService();
 	}
 	
 	@Test
 	public void buildingOfHeaderTest() {
-		this.headerBuilder = new HeaderBuilder(
+		this.authenticator = new Authenticator(
 				Environment.API_KEY,
 				Environment.PASSPHRASE,
 				Environment.SECRET
 				);
 		
-		headerBuilder.setMethodAttributes(timeService.getTime().getEpoch(),
+		authenticator.setMethodAttributes(timeService.getTime().getEpoch(),
 										"",
 										Constants.GDAX.PrivatePaths.ACCOUNTS,
 										Constants.HTTP.Methods.GET);
 		
-		try {
-			HttpHeaders header = headerBuilder.buildHeaders();
-			assertTrue(header != null);
-			System.out.println(header.toString());
-		} catch (JsonProcessingException e) {
-			System.out.println("Failure");
-			e.printStackTrace();
-		}
-	}
 
+		HttpHeaders header = authenticator.buildHeaders();
+		assertTrue(header != null);
+		System.out.println(header.toString());
+	}
 }

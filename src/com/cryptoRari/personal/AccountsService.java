@@ -12,19 +12,17 @@ import org.springframework.web.client.RestTemplate;
 import com.cryptoRari.entities.Account;
 import com.cryptoRari.entities.Hold;
 import com.cryptoRari.entities.Ledger;
-import com.cryptoRari.marketData.TimeService;
 import com.cryptoRari.utilities.Constants;
-import com.cryptoRari.utilities.Environment;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AccountsService {
 
-	private HeaderBuilder headerBuilder;
+	private Authenticator authenticator;
 	private RestTemplate restTemplate;
 	
 	public AccountsService(String apiKey, String passPhrase, String secret) {
-		this.headerBuilder = new HeaderBuilder(apiKey, passPhrase, secret);
+		this.authenticator = new Authenticator(apiKey, passPhrase, secret);
 		this.restTemplate = new RestTemplate();
 	}
 	
@@ -41,15 +39,15 @@ public class AccountsService {
 		//Get requests have no body
 		String accountsBody = "";
 		
-		//Setup headerBuilder method attributes
-		headerBuilder.setMethodAttributes(epochTime, 
+		//Setup authenticator method attributes
+		authenticator.setMethodAttributes(epochTime,
 										accountsBody, 
 										Constants.GDAX.PrivatePaths.ACCOUNTS, 
 										Constants.HTTP.Methods.GET);
 		
 		try {
 			//Build headers to add to request
-			HttpHeaders httpHeaders = headerBuilder.buildHeaders();
+			HttpHeaders httpHeaders = authenticator.buildHeaders();
 			
 			//Create entity using headers
 			HttpEntity<String> entity = new HttpEntity<String>(httpHeaders);
@@ -94,14 +92,14 @@ public class AccountsService {
 									"/" + accountId +
 									Constants.GDAX.PrivatePaths.ACCOUNT_HISTORY;
 		
-		headerBuilder.setMethodAttributes(epochTime,
+		authenticator.setMethodAttributes(epochTime,
 											accountHistoryBody,
 											accountHistoryPath, 
 											Constants.HTTP.Methods.GET);
 		
 		try {
 			//Build headers to add to request
-			HttpHeaders httpHeaders = headerBuilder.buildHeaders();
+			HttpHeaders httpHeaders = authenticator.buildHeaders();
 			
 			//Create entity using headers
 			HttpEntity<String> entity = new HttpEntity<String>(httpHeaders);
@@ -146,14 +144,14 @@ public class AccountsService {
 							"/" + accountId +
 							Constants.GDAX.PrivatePaths.HOLDS;
 		
-		headerBuilder.setMethodAttributes(epochTime, 
+		authenticator.setMethodAttributes(epochTime,
 										holdsBody, 
 										holdsPath, 
 										Constants.HTTP.Methods.GET);
 		
 		try {
 			//Build headers to add to request
-			HttpHeaders httpHeaders = headerBuilder.buildHeaders();
+			HttpHeaders httpHeaders = authenticator.buildHeaders();
 			
 			//Create entity using headers
 			HttpEntity<String> entity = new HttpEntity<String>(httpHeaders);
